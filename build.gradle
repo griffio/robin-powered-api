@@ -1,0 +1,46 @@
+plugins {
+  id 'java'
+}
+
+description = 'basic gradle build'
+group = "griffio"
+version = "0.1.0"
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+
+  compile("com.google.guava:guava:${guava_version}",
+      "com.squareup.okhttp:okhttp:${okhttp_version}",
+      "com.squareup.okhttp:okhttp-urlconnection:${okhttp_version}",
+      "com.squareup.retrofit:retrofit:${retrofit_version}",
+      "com.google.code.findbugs:jsr305:${jsr305_version}",
+      "org.slf4j:slf4j-api:${slf4j_api_version}",
+      "ch.qos.logback:logback-classic:${logback_version}")
+
+  testCompile("com.google.guava:guava-testlib:$guava_version",
+      "junit:junit:${junit_version}",
+      "com.google.truth:truth:${truth_version}",
+      "org.testng:testng:${testng_version}")
+
+}
+
+tasks.withType(JavaCompile) {
+  description = "javac: ignore processor hints, keep all other hints"
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+  options.compilerArgs += ["-Xlint:all,-processing"]
+  options.encoding = "UTF-8"
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = 2.3
+}
+
+test {
+
+  return useTestNG()
+}
+
