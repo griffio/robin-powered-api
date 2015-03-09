@@ -1,4 +1,4 @@
-package griffio.robinpowered.resources.gson;
+package griffio.gson;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
