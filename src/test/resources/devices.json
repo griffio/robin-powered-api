@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "account_id": 888,
+      "created_at": "2015-02-22T20:36:08+0000",
+      "device_manifest": {
+        "created_at": "",
+        "id": 10,
+        "is_relay": false,
+        "name": "iBeacon",
+        "presence_publisher_type": "PASSIVE",
+        "slug": "ibeacon",
+        "updated_at": "2014-07-03T17:32:59+0000"
+      },
+      "device_manifest_id": 10,
+      "id": 9921,
+      "identifiers": [
+        {
+          "created_at": "2015-02-22T20:36:08+0000",
+          "device_id": 9921,
+          "interface": "robin-ibeacon",
+          "major": "1",
+          "minor": "2",
+          "urn": "urn:robin-ibeacon:B9407F30-F5F8-466E-AFF9-25556B57FE6D:1:2",
+          "uuid": "B9407F30-F5F8-466E-AFF9-25556B57FE6D",
+          "value": "b9407f30f5f8466eaff925556b57fe6d:1:2"
+        }
+      ],
+      "last_reported_at": "",
+      "name": "Another",
+      "updated_at": "2015-02-22T20:36:08+0000"
+    },
+    {
+      "account_id": 888,
+      "created_at": "2015-02-08T14:14:03+0000",
+      "device_manifest": {
+        "created_at": "",
+        "id": 10,
+        "is_relay": false,
+        "name": "iBeacon",
+        "presence_publisher_type": "PASSIVE",
+        "slug": "ibeacon",
+        "updated_at": "2014-07-03T17:32:59+0000"
+      },
+      "device_manifest_id": 10,
+      "id": 9874,
+      "identifiers": [
+        {
+          "created_at": "2015-02-08T14:14:03+0000",
+          "device_id": 9874,
+          "interface": "robin-ibeacon",
+          "major": "239",
+          "minor": "466",
+          "urn": "urn:robin-ibeacon:44F77920-EBF9-11E3-AC10-0800200C9A66:239:466",
+          "uuid": "44F77920-EBF9-11E3-AC10-0800200C9A66",
+          "value": "44f77920ebf911e3ac100800200c9a66:239:466"
+        }
+      ],
+      "last_reported_at": "",
+      "name": "1Qa6",
+      "updated_at": "2015-02-08T14:14:03+0000"
+    }
+  ],
+  "meta": {
+    "message": "",
+    "more_info": {},
+    "status": "OK",
+    "status_code": 200
+  },
+  "paging": {
+    "page": 1,
+    "per_page": 10
+  }
+}

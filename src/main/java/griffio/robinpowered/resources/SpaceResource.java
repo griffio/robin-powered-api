@@ -1,5 +1,17 @@
 package griffio.robinpowered.resources;
 
-public class SpaceResource {
-  Long id;
+import com.google.auto.value.AutoValue;
+
+@AutoValue
+public abstract class SpaceResource {
+
+  SpaceResource() {
+  }
+
+  public abstract Long id();
+
+  public SpaceResource create(Long id) {
+    return null;
+  }
+
 }

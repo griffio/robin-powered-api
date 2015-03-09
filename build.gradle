@@ -1,10 +1,15 @@
 plugins {
   id 'java'
+  id 'com.ewerk.gradle.plugins.auto-value' version '1.0.1'
 }
 
 description = 'basic gradle build'
 group = "griffio"
 version = "0.1.0"
+
+autoValue {
+  autoValueSourcesDir = 'src/autoValue/java'
+}
 
 repositories {
   jcenter()
@@ -22,6 +27,7 @@ dependencies {
 
   testCompile("com.google.guava:guava-testlib:$guava_version",
       "junit:junit:${junit_version}",
+      "com.squareup.retrofit:retrofit-mock:${retrofit_version}",
       "com.google.truth:truth:${truth_version}",
       "org.testng:testng:${testng_version}")
 
@@ -40,7 +46,6 @@ task wrapper(type: Wrapper) {
 }
 
 test {
-
   return useTestNG()
 }
 
