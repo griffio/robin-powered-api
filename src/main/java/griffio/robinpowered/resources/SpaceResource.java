@@ -10,8 +10,8 @@ public abstract class SpaceResource {
 
   public abstract Long id();
 
-  public SpaceResource create(Long id) {
-    return null;
+  public static SpaceResource create(Long id) {
+    return new AutoValue_SpaceResource(id);
   }
 
 }

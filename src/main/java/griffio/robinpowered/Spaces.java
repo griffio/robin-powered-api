@@ -8,5 +8,5 @@ import retrofit.http.Path;
  * /spaces/466 Authorization:"Access-Token ABCD"
  */
 public interface Spaces {
-  @GET("/spaces/{id}") SpaceResource space(@Path("id") Long id);
+  @GET("/spaces/{id}") SpaceResource get(@Path("id") Long id);
 }

@@ -10,8 +10,10 @@ public abstract class DeviceResource {
 
   public abstract Long id();
 
-  public DeviceResource create(Long id) {
-    return null;
+  public abstract String name();
+
+  public static DeviceResource create(Long id, String name) {
+    return new AutoValue_DeviceResource(id, name);
   }
 
 }
