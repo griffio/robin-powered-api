@@ -4,7 +4,7 @@ import griffio.robinpowered.Locations;
 import griffio.robinpowered.Spaces;
 import griffio.robinpowered.resources.SpaceResource;
 
-public class TestServices implements Spaces, Locations {
+public class ServiceFixtures implements Spaces, Locations {
 
   @Override
   public SpaceResource get(Long id) {

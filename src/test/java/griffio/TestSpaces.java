@@ -17,7 +17,7 @@ public class TestSpaces {
 
     MockRestAdapter mockAdapter = MockRestAdapter.from(restAdapter);
 
-    Spaces spaces = mockAdapter.create(Spaces.class, new TestServices());
+    Spaces spaces = mockAdapter.create(Spaces.class, new ServiceFixtures());
 
     SpaceResource spaceResource = spaces.get(1L);
 

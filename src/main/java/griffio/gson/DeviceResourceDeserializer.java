@@ -20,7 +20,6 @@ import java.lang.reflect.Type;
  * }
  */
 public class DeviceResourceDeserializer implements JsonDeserializer<DeviceResource> {
-
   @Override
   public DeviceResource deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
       throws JsonParseException {
