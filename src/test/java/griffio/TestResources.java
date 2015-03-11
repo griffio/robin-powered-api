@@ -1,14 +1,16 @@
 package griffio;
 
-import com.google.common.truth.Truth;
-import griffio.robinpowered.Spaces;
+import griffio.robinpowered.Space;
 import griffio.robinpowered.Version;
+import griffio.robinpowered.resources.SpaceId;
 import griffio.robinpowered.resources.SpaceResource;
 import org.testng.annotations.Test;
 import retrofit.MockRestAdapter;
 import retrofit.RestAdapter;
 
-public class TestSpaces {
+import static com.google.common.truth.Truth.ASSERT;
+
+public class TestResources {
 
   @Test
   public void spaces() throws Exception {
@@ -17,11 +19,11 @@ public class TestSpaces {
 
     MockRestAdapter mockAdapter = MockRestAdapter.from(restAdapter);
 
-    Spaces spaces = mockAdapter.create(Spaces.class, new ServiceFixtures());
+    Space spaces = mockAdapter.create(Space.class, new ServiceFixtures());
 
-    SpaceResource spaceResource = spaces.get(1L);
+    SpaceResource spaceResource = spaces.get(SpaceId.create(1L));
 
-    Truth.ASSERT.that(spaceResource).isNotNull();
+    ASSERT.that(spaceResource).isNotNull();
 
   }
 

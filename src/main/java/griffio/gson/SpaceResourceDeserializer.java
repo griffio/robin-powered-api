@@ -5,10 +5,11 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import griffio.robinpowered.resources.DeviceId;
-import griffio.robinpowered.resources.DeviceResource;
+import griffio.robinpowered.resources.SpaceId;
+import griffio.robinpowered.resources.SpaceResource;
 
 import java.lang.reflect.Type;
+
 /**
  * {
  * "id": 1,
@@ -19,14 +20,14 @@ import java.lang.reflect.Type;
  * "updated_at": "2014-05-19T21:00:35+0000"
  * }
  */
-public class DeviceResourceDeserializer implements JsonDeserializer<DeviceResource> {
+public class SpaceResourceDeserializer implements JsonDeserializer<SpaceResource> {
   @Override
-  public DeviceResource deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+  public SpaceResource deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
       throws JsonParseException {
 
     JsonObject result = json.getAsJsonObject();
 
-    return DeviceResource.create(DeviceId.create(result.get("id").getAsLong()), result.get("name").getAsString());
+    return SpaceResource.create(SpaceId.create(result.get("id").getAsLong()), result.get("name").getAsString());
 
   }
 
