@@ -12,9 +12,11 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /**
+ * "Type adapter factories are useful when several types share similar structure in their JSON form."
+ *
  * Create type adapter to extract the json element from the "data" object
  */
-public class DataResourceTypeAdapterFactory implements TypeAdapterFactory {
+public class RobinResourceTypeAdapterFactory implements TypeAdapterFactory {
 
   @Override
   public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {

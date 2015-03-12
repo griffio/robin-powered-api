@@ -1,0 +1,20 @@
+{
+  "data": {
+    "account_id": 983,
+    "address": "",
+    "created_at": "2014-03-25T15:55:19+0000",
+    "description": "",
+    "id": 239,
+    "image": "",
+    "latitude": 0,
+    "longitude": 0,
+    "name": "Primary",
+    "updated_at": "2014-03-25T15:55:19+0000"
+  },
+  "meta": {
+    "message": "",
+    "more_info": {},
+    "status": "OK",
+    "status_code": 200
+  }
+}

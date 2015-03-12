@@ -10,8 +10,10 @@ public abstract class LocationResource {
 
   public abstract LocationId id();
 
-  public static LocationResource create(LocationId id) {
-    return new AutoValue_LocationResource(id);
+  public abstract String name();
+
+  public static LocationResource create(LocationId id, String name) {
+    return new AutoValue_LocationResource(id, name);
   }
 
 }
