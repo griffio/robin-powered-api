@@ -1,6 +1,6 @@
 package griffio.robinpowered;
 
-import griffio.robinpowered.resources.DeviceResource;
+import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.SpaceId;
 import griffio.robinpowered.resources.SpaceResource;
 import retrofit.http.GET;
@@ -13,6 +13,6 @@ public interface Space {
   SpaceResource get(@Path("id") SpaceId id);
 
   @GET("/spaces/{id}/devices")
-  List<DeviceResource> getDevices(@Path("id") SpaceId id);
+  List<BleDeviceResource> getDevices(@Path("id") SpaceId id);
 
 }

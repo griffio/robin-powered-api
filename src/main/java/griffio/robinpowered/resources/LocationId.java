@@ -10,6 +10,11 @@ public abstract class LocationId {
 
   public abstract Long value();
 
+  @Override
+  public String toString() {
+    return String.valueOf(value());
+  }
+
   public static LocationId create(Long id) {
     return new AutoValue_LocationId(id);
   }

@@ -8,6 +8,11 @@ public abstract class DeviceId {
   DeviceId() {
   }
 
+  @Override
+  public String toString() {
+    return String.valueOf(value());
+  }
+
   public abstract Long value();
 
   public static DeviceId create(Long id) {

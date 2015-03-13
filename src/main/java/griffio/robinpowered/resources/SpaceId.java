@@ -10,6 +10,11 @@ public abstract class SpaceId {
 
   public abstract Long value();
 
+  @Override
+  public String toString() {
+    return String.valueOf(value());
+  }
+
   public static SpaceId create(Long id) {
     return new AutoValue_SpaceId(id);
   }

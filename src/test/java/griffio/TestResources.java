@@ -4,7 +4,7 @@ import griffio.robinpowered.Location;
 import griffio.robinpowered.Space;
 import griffio.robinpowered.Version;
 
-import griffio.robinpowered.resources.DeviceResource;
+import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.LocationId;
 import griffio.robinpowered.resources.LocationResource;
 import griffio.robinpowered.resources.SpaceId;
@@ -54,7 +54,7 @@ public class TestResources {
   @Test
   public void devices() throws Exception {
     Space space = mockAdapter.create(Space.class, fixtures);
-    List<DeviceResource> deviceResource = space.getDevices(SpaceId.create(1L));
+    List<BleDeviceResource> deviceResource = space.getDevices(SpaceId.create(1L));
     ASSERT.that(deviceResource).hasSize(1);
   }
 

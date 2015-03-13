@@ -7,7 +7,7 @@ import griffio.gson.DeviceResourceDeserializer;
 import griffio.gson.LocationResourceDeserializer;
 import griffio.gson.RobinResourceTypeAdapterFactory;
 import griffio.gson.SpaceResourceDeserializer;
-import griffio.robinpowered.resources.DeviceResource;
+import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.LocationResource;
 import griffio.robinpowered.resources.SpaceResource;
 import org.testng.annotations.BeforeMethod;
@@ -26,7 +26,7 @@ public class TestFixtures {
   @BeforeMethod
   public void gsonTypeAdapters() throws Exception {
     gson = new GsonBuilder()
-        .registerTypeAdapter(DeviceResource.class, new DeviceResourceDeserializer())
+        .registerTypeAdapter(BleDeviceResource.class, new DeviceResourceDeserializer())
         .registerTypeAdapter(LocationResource.class, new LocationResourceDeserializer())
         .registerTypeAdapter(SpaceResource.class, new SpaceResourceDeserializer())
         .registerTypeAdapterFactory(new RobinResourceTypeAdapterFactory())
@@ -43,8 +43,8 @@ public class TestFixtures {
   @Test
   public void devices() throws Exception {
     String fixture = Fixtures.fixture("fixtures/devices.json");
-    Type listType = new TypeToken<List<DeviceResource>>() {}.getType();
-    List<DeviceResource> actualList = gson.fromJson(fixture, listType);
+    Type listType = new TypeToken<List<BleDeviceResource>>() {}.getType();
+    List<BleDeviceResource> actualList = gson.fromJson(fixture, listType);
     ASSERT.that(actualList).hasSize(2);
   }
 
