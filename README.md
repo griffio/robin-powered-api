@@ -1,15 +1,17 @@
-gradle-project
-==============
+##Robin Powered Api with Retrofit, Gson
 
-basic gradle (2.3) build template for Java 8
+###Example with TypeAdapterFactory, TypeAdapters, Deserialisers
 
-Props
-~~~
-guava_version=18.0
-junit_version=4.11
-jsr305_version=1.3.9
-logback_version=1.1.2
-slf4j_api_version=1.7.10
-testng_version=6.8.21
-truth_version=0.25
-~~~
+Robin api uses a "data" element enclosure to wrap resource responses - TypeAdapterFactory can be used to unwrap.
+
+~~~json
+{
+  "data": [
+    {}
+  ],
+   "meta": {},
+   "paging": {
+    "page": 1,
+    "per_page": 10
+   }
+}

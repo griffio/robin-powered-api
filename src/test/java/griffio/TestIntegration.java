@@ -21,6 +21,9 @@ import org.testng.annotations.Test;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 
+/**
+ * Call the external Api with full stack. Requires client account access token or "401 Unauthorized"
+ */
 public class TestIntegration {
 
   private static Logger log = LoggerFactory.getLogger(TestIntegration.class);

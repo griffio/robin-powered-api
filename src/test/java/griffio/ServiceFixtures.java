@@ -14,6 +14,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Implementation of Services with hard-coded fixtures
+ */
 public class ServiceFixtures implements Space, Location {
 
   @Override

@@ -18,6 +18,9 @@ import java.util.List;
 
 import static com.google.common.truth.Truth.ASSERT;
 
+/**
+ * Test retrofit resources only
+ */
 public class TestResources {
 
   private static final ServiceFixtures fixtures = new ServiceFixtures();

@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Load resource file from classpath
+ */
 public class Fixtures {
 
   public static String fixture(String resourceName) throws IOException {

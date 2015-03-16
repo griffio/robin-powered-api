@@ -19,6 +19,9 @@ import java.util.List;
 
 import static com.google.common.truth.Truth.ASSERT;
 
+/**
+ * Just the Gson fixtures to be tested. Make sure Deserializers and adapters work.
+ */
 public class TestFixtures {
 
   private Gson gson;
