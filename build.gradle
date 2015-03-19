@@ -21,8 +21,10 @@ dependencies {
       "com.squareup.okhttp:okhttp:${okhttp_version}",
       "com.squareup.okhttp:okhttp-urlconnection:${okhttp_version}",
       "com.squareup.retrofit:retrofit:${retrofit_version}",
+      "com.squareup.retrofit:retrofit:${retrofit_version}",
       "com.google.code.findbugs:jsr305:${jsr305_version}",
       "org.slf4j:slf4j-api:${slf4j_api_version}",
+      "com.google.code.gson:gson:${gson_version}",
       "ch.qos.logback:logback-classic:${logback_version}")
 
   testCompile("com.google.guava:guava-testlib:$guava_version",
