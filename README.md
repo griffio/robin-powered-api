@@ -1,4 +1,4 @@
-##Robin Powered Api with Retrofit, Gson
+##Robin Powered Api with Retrofit, OkHttp, Gson and AutoValue
 
 ###Example with TypeAdapterFactory, TypeAdapters, Deserialisers
 
