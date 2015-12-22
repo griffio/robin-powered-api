@@ -1,5 +1,7 @@
 ##Robin Powered Api with Retrofit, OkHttp, Gson and AutoValue
 
+updated for [Retrofit 2.0.0-beta2](https://github.com/square/retrofit)
+
 ###Example with TypeAdapterFactory, TypeAdapters, Deserialisers
 
 Robin api uses a "data" element enclosure to wrap resource responses - TypeAdapterFactory can be used to unwrap.

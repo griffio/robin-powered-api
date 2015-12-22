@@ -14,21 +14,17 @@ import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.LocationId;
 import griffio.robinpowered.resources.LocationResource;
 import griffio.robinpowered.resources.SpaceResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import retrofit.RestAdapter;
-import retrofit.converter.GsonConverter;
+import retrofit.GsonConverterFactory;
+import retrofit.Retrofit;
 
 /**
  * Call the external Api with full stack. Requires client account access token or "401 Unauthorized"
  */
 public class TestIntegration {
 
-  private static Logger log = LoggerFactory.getLogger(TestIntegration.class);
-
-  private RestAdapter restAdapter;
+  private Retrofit retrofit;
 
   @BeforeMethod
   public void restAdapter() throws Exception {
@@ -40,26 +36,17 @@ public class TestIntegration {
         .registerTypeAdapterFactory(new RobinResourceTypeAdapterFactory())
         .create();
 
-    restAdapter = new RestAdapter.Builder()
-        .setLog(new TestLog())
-        .setLogLevel(RestAdapter.LogLevel.BASIC)
-        .setRequestInterceptor(new AccessTokenInterceptor("FIXME"))
-        .setConverter(new GsonConverter(gson))
-        .setEndpoint(Version.Api).build();
+    retrofit = new Retrofit.Builder()
+        .baseUrl(Version.Api)
+        .addConverterFactory(GsonConverterFactory.create(gson)).build();
+
+    retrofit.client().interceptors().add(new AccessTokenInterceptor("FIXME"));
   }
 
   @Test
   public void spaces() throws Exception {
-    Location location = restAdapter.create(Location.class);
-    LocationResource locationResource = location.get(LocationId.create(239L));
+    Location location = retrofit.create(Location.class);
+    LocationResource locationResource = location.get(LocationId.create(239L)).execute().body();
     Truth.ASSERT.that(locationResource).isNotNull();
   }
-
-  static class TestLog implements RestAdapter.Log {
-    @Override
-    public void log(String message) {
-      log.info(message);
-    }
-  }
-
 }

@@ -18,5 +18,4 @@ public class Fixtures {
   public static String fixture(URL resource) throws IOException {
     return Resources.toString(resource, StandardCharsets.UTF_8);
   }
-
 }
