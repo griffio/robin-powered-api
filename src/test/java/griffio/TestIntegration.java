@@ -14,20 +14,26 @@ import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.LocationId;
 import griffio.robinpowered.resources.LocationResource;
 import griffio.robinpowered.resources.SpaceResource;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
+import retrofit2.GsonConverterFactory;
+import retrofit2.Retrofit;
 
 /**
  * Call the external Api with full stack. Requires client account access token or "401 Unauthorized"
  */
 public class TestIntegration {
 
+  private final Interceptor accessToken = new AccessTokenInterceptor("INSERT-ROBIN-POWERED-ACCESS-TOKEN");
+
   private Retrofit retrofit;
 
   @BeforeMethod
   public void restAdapter() throws Exception {
+
+    OkHttpClient client = new OkHttpClient.Builder().addInterceptor(accessToken).build();
 
     Gson gson = new GsonBuilder()
         .registerTypeAdapter(BleDeviceResource.class, new DeviceResourceDeserializer())
@@ -37,10 +43,10 @@ public class TestIntegration {
         .create();
 
     retrofit = new Retrofit.Builder()
+        .client(client)
         .baseUrl(Version.Api)
         .addConverterFactory(GsonConverterFactory.create(gson)).build();
 
-    retrofit.client().interceptors().add(new AccessTokenInterceptor("FIXME"));
   }
 
   @Test

@@ -11,13 +11,12 @@ import griffio.robinpowered.resources.SpaceId;
 import griffio.robinpowered.resources.SpaceResource;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import retrofit.Retrofit;
-import retrofit.mock.CallBehaviorAdapter;
-import retrofit.mock.MockRetrofit;
-import retrofit.mock.NetworkBehavior;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.http.Path;
+import retrofit2.mock.MockRetrofit;
 
 import java.util.List;
-import java.util.concurrent.Executors;
 
 import static com.google.common.truth.Truth.ASSERT;
 /**
@@ -25,42 +24,36 @@ import static com.google.common.truth.Truth.ASSERT;
  */
 public class TestResources {
 
-  private ServiceFixtures fixtures;
-
-  private MockRetrofit mock;
+  private MockServiceFixtures fixtures;
 
   @BeforeMethod
   public void restAdapter() throws Exception {
     Retrofit retrofit = new Retrofit.Builder().baseUrl(Version.Api).build();
-    fixtures = new ServiceFixtures(retrofit);
-    mock = new MockRetrofit(NetworkBehavior.create(), new CallBehaviorAdapter(retrofit, Executors.newSingleThreadExecutor()));
+    MockRetrofit mock = new MockRetrofit.Builder(retrofit).build();
+    fixtures = new MockServiceFixtures(mock);
   }
 
   @Test
   public void location() throws Exception {
-    Location location = mock.create(Location.class, fixtures);
-    LocationResource locationResource = location.get(LocationId.create(1L)).execute().body();
+    LocationResource locationResource = fixtures.get(LocationId.create(1L)).execute().body();
     ASSERT.that(locationResource).isNotNull();
   }
 
   @Test
   public void space() throws Exception {
-    Space space = mock.create(Space.class, fixtures);
-    SpaceResource spaceResource = space.get(SpaceId.create(1L)).execute().body();
+    SpaceResource spaceResource = fixtures.get(SpaceId.create(1L)).execute().body();
     ASSERT.that(spaceResource).isNotNull();
   }
 
   @Test
   public void spaces() throws Exception {
-    Location location = mock.create(Location.class, fixtures);
-    List<SpaceResource> spaceResource = location.getSpaces(LocationId.create(1L)).execute().body();
+    List<SpaceResource> spaceResource = fixtures.getSpaces(LocationId.create(1L)).execute().body();
     ASSERT.that(spaceResource).hasSize(1);
   }
 
   @Test
   public void devices() throws Exception {
-    Space space = mock.create(Space.class, fixtures);
-    List<BleDeviceResource> deviceResource = space.getDevices(SpaceId.create(1L)).execute().body();
+    List<BleDeviceResource> deviceResource = fixtures.getDevices(SpaceId.create(1L)).execute().body();
     ASSERT.that(deviceResource).hasSize(1);
   }
 

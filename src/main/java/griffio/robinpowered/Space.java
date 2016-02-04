@@ -3,9 +3,9 @@ package griffio.robinpowered;
 import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.SpaceId;
 import griffio.robinpowered.resources.SpaceResource;
-import retrofit.Call;
-import retrofit.http.GET;
-import retrofit.http.Path;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 import java.util.List;
 
