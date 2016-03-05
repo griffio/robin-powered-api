@@ -18,7 +18,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import retrofit2.GsonConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.Retrofit;
 
 /**
