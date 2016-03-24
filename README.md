@@ -1,10 +1,10 @@
-##Robin Powered Api with Retrofit, OkHttp, Gson and AutoValue
+## Robin Powered Api with Retrofit, OkHttp, Gson and AutoValue
 
-updated for [Retrofit2 2.0.0-beta4](https://github.com/square/retrofit)
+updated for [Retrofit2 2.0.0](https://github.com/square/retrofit)
 
-###Example with TypeAdapterFactory, TypeAdapters, Deserialisers
+### Example with TypeAdapterFactory, TypeAdapters, Deserialisers
 
-Robin api uses a "data" element enclosure to wrap resource responses - TypeAdapterFactory can be used to unwrap.
+Robin Powered api uses a "data" element enclosure to wrap resource responses - TypeAdapterFactory can be used to unwrap.
 
 ~~~json
 {
