@@ -1,22 +1,16 @@
 package griffio;
 
-import griffio.robinpowered.Location;
-import griffio.robinpowered.Space;
 import griffio.robinpowered.Version;
-
 import griffio.robinpowered.resources.BleDeviceResource;
 import griffio.robinpowered.resources.LocationId;
 import griffio.robinpowered.resources.LocationResource;
 import griffio.robinpowered.resources.SpaceId;
 import griffio.robinpowered.resources.SpaceResource;
+import java.util.List;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import retrofit2.Call;
 import retrofit2.Retrofit;
-import retrofit2.http.Path;
 import retrofit2.mock.MockRetrofit;
-
-import java.util.List;
 
 import static com.google.common.truth.Truth.ASSERT;
 /**
