@@ -1,6 +1,6 @@
 ## Robin Powered Api with Retrofit, OkHttp, Gson and AutoValue
 
-updated for [Retrofit2 v2.0.2](https://github.com/square/retrofit)
+updated for [Retrofit2 v2.1.0](https://github.com/square/retrofit)
 
 ### Example with TypeAdapterFactory, TypeAdapters, Deserialisers
 
