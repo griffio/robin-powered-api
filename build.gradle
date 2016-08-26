@@ -1,11 +1,11 @@
 plugins {
   id 'java'
-  id 'com.ewerk.gradle.plugins.auto-value' version '1.0.4'
+  id 'com.ewerk.gradle.plugins.auto-value' version '1.0.6'
 }
 
 description = 'basic gradle build'
 group = "griffio"
-version = "0.1.0"
+version = "1.0.0"
 
 autoValue {
   autoValueSourcesDir = 'src/autoValue/java'
@@ -46,7 +46,7 @@ tasks.withType(JavaCompile) {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = 2.10
+  gradleVersion = 3.0
 }
 
 test {
