@@ -5,7 +5,7 @@ plugins {
 
 description = 'basic gradle build'
 group = "griffio"
-version = "1.0.0"
+version = "1.1.0"
 
 autoValue {
   autoValueSourcesDir = 'src/autoValue/java'

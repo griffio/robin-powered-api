@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import static com.google.common.truth.Truth.ASSERT;
+import static com.google.common.truth.Truth.assertThat;
 
 /**
  * Just the Gson fixtures to be tested. Make sure Deserializers and adapters work.
@@ -40,7 +40,7 @@ public class TestFixtures {
   public void location() throws IOException {
     String fixture = Fixtures.fixture("fixtures/location.json");
     LocationResource actual = gson.fromJson(fixture, LocationResource.class);
-    ASSERT.that(actual).isNotNull();
+    assertThat(actual).isNotNull();
   }
 
   @Test
@@ -48,7 +48,7 @@ public class TestFixtures {
     String fixture = Fixtures.fixture("fixtures/devices.json");
     Type listType = new TypeToken<List<BleDeviceResource>>() {}.getType();
     List<BleDeviceResource> actualList = gson.fromJson(fixture, listType);
-    ASSERT.that(actualList).hasSize(2);
+    assertThat(actualList).hasSize(2);
   }
 
   @Test
@@ -56,7 +56,7 @@ public class TestFixtures {
     String fixture = Fixtures.fixture("fixtures/spaces.json");
     Type listType = new TypeToken<List<SpaceResource>>() {}.getType();
     List<SpaceResource> actualList = gson.fromJson(fixture, listType);
-    ASSERT.that(actualList).hasSize(1);
+    assertThat(actualList).hasSize(1);
   }
 
 }

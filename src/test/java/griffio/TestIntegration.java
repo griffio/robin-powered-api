@@ -53,6 +53,6 @@ public class TestIntegration {
   public void spaces() throws Exception {
     Location location = retrofit.create(Location.class);
     LocationResource locationResource = location.get(LocationId.create(239L)).execute().body();
-    Truth.ASSERT.that(locationResource).isNotNull();
+    Truth.assertThat(locationResource).isNotNull();
   }
 }
