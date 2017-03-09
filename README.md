@@ -1,6 +1,6 @@
 ## Robin Powered Api with Retrofit, OkHttp, Gson and AutoValue
 
-updated for [Retrofit2 v2.1.0](https://github.com/square/retrofit)
+updated for [Retrofit2 v2.2.0](https://github.com/square/retrofit)
 
 updated for [OkHttp3 v3.6.0](https://github.com/square/okhttp)
 
