@@ -2,7 +2,7 @@
 
 updated for [Retrofit2 v2.2.0](https://github.com/square/retrofit)
 
-updated for [OkHttp3 v3.6.0](https://github.com/square/okhttp)
+updated for [OkHttp3 v3.7.0](https://github.com/square/okhttp)
 
 ---
 
